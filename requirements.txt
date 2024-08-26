@@ -1,0 +1,12 @@
+-f https://download.pytorch.org/whl/torch_stable.html
+accelerate @ git+https://github.com/huggingface/accelerate@848ed800fac1a84e8fbda853086f06f5699835e5
+datasets==2.14.5
+deepspeed==0.12.6
+sentencepiece==0.1.99
+torch==2.1.2+cu118
+transformers @ git+https://github.com/huggingface/transformers@afc45b13ca40f56268e5f135aab2487377fc536b
+trl==0.7.9
+tqdm==4.66.1
+PyYAML==6.0.1
+peft @ git+https://github.com/huggingface/peft@ebbff4023ad276cbcb2466fd7e99be7d3ae0ae11
+tensorboard==2.15.1

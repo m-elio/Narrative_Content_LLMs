@@ -1,0 +1,84 @@
+original_model_name: "localpath/Mistral-7B-v0.1"
+new_model_name: "localpath/Mistral-Writing-Prompts"
+
+dataset_path: "tuning/processed/writing_prompts_train_hf_processed.jsonl"
+
+################################################################################
+# General parameters
+################################################################################
+
+load_in_8_bit: false
+max_seq_length: 2048
+packing: true
+
+################################################################################
+# Pretrained model parameters
+################################################################################
+
+pretrained_parameters:
+  attn_implementation: "flash_attention_2"
+
+################################################################################
+# Instruction format parameters
+################################################################################
+
+input_format: "raw"
+input_format_parameters:
+  text_field: "prompt"
+
+################################################################################
+# LoRA parameters
+################################################################################
+
+lora_config:
+  # LoRA attention dimension
+  r: 8
+  # Alpha parameter for LoRA scaling
+  lora_alpha: 16
+  lora_dropout: 0.1
+  bias: "none"
+  task_type: "CAUSAL_LM"
+  target_modules:
+    - "k_proj"
+    - "q_proj"
+    - "v_proj"
+    - "o_proj"
+    - "down_proj"
+    - "up_proj"
+    - "gate_proj"
+    - "embed_tokens"
+    - "lm_head"
+
+################################################################################
+# TrainingArguments parameters
+################################################################################
+
+training_arguments:
+
+  num_train_epochs: 1
+
+  per_device_train_batch_size: 32
+
+  gradient_accumulation_steps: 4
+
+  gradient_checkpointing: true
+
+  optim: "adamw_torch"
+
+  bf16: true
+  fp16: false
+  tf32: true
+
+  learning_rate: 0.0001
+
+  lr_scheduler_type: "cosine"
+
+  warmup_ratio: 0.0
+
+  weight_decay: 0.0001
+
+  max_grad_norm: 1.0
+
+  logging_steps: 5
+
+  seed: 42

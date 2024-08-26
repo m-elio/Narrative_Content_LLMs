@@ -1,0 +1,14 @@
+model_dir: "localpath/Mistral-Writing-Prompts"
+dataset_path: "tuning/processed/writing_prompts_test_hf_processed.jsonl"
+
+pretrained_parameters:
+  torch_dtype: "bf16"
+
+generation_parameters:
+  max_new_tokens: 2048
+  top_k: 0
+  top_p: 0.92
+  do_sample: true
+
+batch_size: 32
+padding_side: "left"
