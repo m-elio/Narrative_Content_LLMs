@@ -11,7 +11,7 @@ This repo contains the code to reproduce the experiments described in the work, 
 
 To reproduce the experiments, create a Python 3.10 virtual environment and install the requirements listed in the [requirements file](requirements.txt).
 
-Alternatively, you can also build a container, for the experiments, Singularity 3.9 Pro was used starting from this [Docker image]([nvidia/cuda:12.1.0-cudnn8-devel-ubuntu20.04](https://hub.docker.com/layers/nvidia/cuda/12.1.0-cudnn8-devel-ubuntu20.04/images/sha256-da5f69611ae7526fbd23f8f8edb06d1818a782f1bbed7b6508efca1cd8d87777?context=explore)).
+Alternatively, you can also build a container, for the experiments, Singularity 3.9 Pro was used starting from this [Docker image](https://hub.docker.com/layers/nvidia/cuda/12.1.0-cudnn8-devel-ubuntu20.04/images/sha256-da5f69611ae7526fbd23f8f8edb06d1818a782f1bbed7b6508efca1cd8d87777?context=explore).
 
 Finally, to smoothly run the scripts, **set the working directory to the root of this project**.
 
